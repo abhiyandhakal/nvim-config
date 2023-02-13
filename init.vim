@@ -3,6 +3,8 @@ set nu " set number
 
 set autoindent
 
+set nowrap
+
 " related to tabwidth
 set tabstop=2
 set softtabstop=0
