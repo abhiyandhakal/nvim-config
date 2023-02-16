@@ -37,6 +37,7 @@ call plug#begin('~/.nvim/plugged')
 	Plug 'ap/vim-css-color' " shows the css colors by highlighting
 	Plug 'ryanoasis/vim-devicons' " icons
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " nvim treesitter, required by telescope
+	Plug 'abhiyandhakal/nvim-colorscheme' " colorscheme
 
 	" for telescope
 	Plug 'nvim-lua/plenary.nvim'
@@ -48,6 +49,8 @@ nnoremap <c-f> :NERDTreeFind<CR>
 nnoremap <c-n> :NERDTree<CR>
 nnoremap <c-t> :NERDTreeToggle<CR>
 
+" colorscheme
+colorscheme catppuccin-mocha
 
 " imports
 source $HOME/.config/nvim/plug-config/coc.vim
