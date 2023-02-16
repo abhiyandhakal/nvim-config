@@ -36,12 +36,18 @@ call plug#begin('~/.nvim/plugged')
 	Plug 'neoclide/coc.nvim' " coc.nvim for intellisense
 	Plug 'ap/vim-css-color' " shows the css colors by highlighting
 	Plug 'ryanoasis/vim-devicons' " icons
+	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " nvim treesitter, required by telescope
+
+	" for telescope
+	Plug 'nvim-lua/plenary.nvim'
+	Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 call plug#end()
 
 " nerdtree configs
 nnoremap <c-f> :NERDTreeFind<CR>
 nnoremap <c-n> :NERDTree<CR>
 nnoremap <c-t> :NERDTreeToggle<CR>
+
 
 " imports
 source $HOME/.config/nvim/plug-config/coc.vim
@@ -50,9 +56,8 @@ source $HOME/.config/nvim/plug-config/coc.vim
 let g:user_emmet_mode='n' "means normal mode only
 let g:user_emmet_leader_key=','
 
-" fuzzy finder mapping to ctrl+p
-nnoremap <c-p> :FZF<CR>
-let $FZF_DEFUALT_COMMAND='fnd \( -name node_modules -o -name .git -o -name .next \) -prune -o -print'
+" fuzzy finder mapping to ff
+nnoremap ff <cmd>Telescope find_files<cr>
 
 "" COC INSTALLS
 " coc-html
