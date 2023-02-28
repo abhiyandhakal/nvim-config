@@ -25,3 +25,10 @@ set splitbelow splitright
 
 " colorscheme
 colorscheme catppuccin-mocha
+
+" nvimtree
+luado vim.g.loaded_netrw = 1
+luado vim.g.loaded_netrwPlugin = 1
+
+" github copilot
+Copilot enable

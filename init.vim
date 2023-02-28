@@ -12,8 +12,11 @@ luado require("telescope").load_extension "file_browser"
 " nvim tree -- file browser
 luado require("nvim-tree").setup()
 
+luado require("indent_blankline").setup { show_current_context = true, show_current_context_start = true }
+
 source ~/.config/nvim/configs/mappings.vim
 " source ~/.config/nvim/configs/colorscheme.lua
+
 
 "" COC INSTALLS
 " coc-html
@@ -24,14 +27,11 @@ source ~/.config/nvim/configs/mappings.vim
 " coc-git
 " coc-discord-rpc
 " coc-eslint
-" coc-floaterm
-" coc-highlight
 " coc-markdown-preview-enhanced
 " coc-prettier
 " coc-rust-analyzer
 " coc-snippets
 " @yaegassy/coc-tailwindcss3
-" coc-texlab
 " coc-tsserver
 " coc-pairs
 " coc-styled-components

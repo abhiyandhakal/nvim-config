@@ -7,3 +7,6 @@ nnoremap <c-f> :Telescope file_browser<cr>
 
 " nvim tree -- file browser
 nnoremap <c-t> :NvimTreeToggle<CR>
+
+" horizontal scroll 
+map <c-l> 20zl <cr>

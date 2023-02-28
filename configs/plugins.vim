@@ -5,8 +5,10 @@ call plug#begin('~/.nvim/plugged')
 	Plug 'ap/vim-css-color' " shows the css colors by highlighting
 	Plug 'ryanoasis/vim-devicons' " icons
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " nvim treesitter, required by telescope
-	Plug 'abhiyandhakal/nvim-colorscheme' " colorscheme
+	Plug 'catppuccin/nvim', { 'as': 'catppuccin' } " colorscheme
 	Plug 'nvim-tree/nvim-tree.lua' " file explorer
+	Plug 'lukas-reineke/indent-blankline.nvim' " indent lines
+	Plug 'github/copilot.vim' " github copilot
 
 	" for telescope
 	Plug 'nvim-lua/plenary.nvim'
