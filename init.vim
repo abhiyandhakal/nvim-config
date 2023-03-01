@@ -17,7 +17,6 @@ luado require("indent_blankline").setup { show_current_context = true, show_curr
 source ~/.config/nvim/configs/mappings.vim
 " source ~/.config/nvim/configs/colorscheme.lua
 
-
 "" COC INSTALLS
 " coc-html
 " coc-python

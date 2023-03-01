@@ -39,8 +39,10 @@ Detailed instructions to use vim plug can be found in the repository of vim plug
 
 After that, you need to navigate to the folder ~/.nvim/plugged/coc.nvim/. Then install the dependencies by typing `yarn` in the command line. Various all the extensions that I use are listed in the init.vim file. You can visit the github repo of [coc.nvim](https://github.com/neoclide/coc.nvim) for the guide to install the extensions. All the other configurations are already done.
 
+<hr>
+
 If you have github copilot, then you can setup the github copilot with the command `:Copilot setup`.
-If you don't have it, you can remove the github copilot's plugin by navigating to the file ~/.config/nvim/configs/plugins.vim and then use `:PlugClean` to remove the plugin. Also don't forget to remove the line saying `Copilot enable` in the file ~/.config/nvim/configs/settings.vim.
+If you don't have it, you can remove the github copilot's plugin by navigating to the file ~/.config/nvim/configs/plugins.vim and then use `:PlugClean` to remove the plugin.
 
 Now you are good to go.
 
