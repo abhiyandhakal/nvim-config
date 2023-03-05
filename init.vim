@@ -9,9 +9,6 @@ let g:user_emmet_leader_key=','
 " telescope
 luado require("telescope").load_extension "file_browser"
 
-" nvim tree -- file browser
-luado require("nvim-tree").setup()
-
 luado require("indent_blankline").setup { show_current_context = true, show_current_context_start = true }
 
 source ~/.config/nvim/configs/mappings.vim

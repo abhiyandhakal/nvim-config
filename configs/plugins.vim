@@ -6,7 +6,7 @@ call plug#begin('~/.nvim/plugged')
 	Plug 'ryanoasis/vim-devicons' " icons
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " nvim treesitter, required by telescope
 	Plug 'catppuccin/nvim', { 'as': 'catppuccin' } " colorscheme
-	Plug 'nvim-tree/nvim-tree.lua' " file explorer
+	Plug 'lambdalisue/fern.vim' " file explorer
 	Plug 'lukas-reineke/indent-blankline.nvim' " indent lines
 	Plug 'github/copilot.vim' " github copilot
 

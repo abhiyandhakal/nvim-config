@@ -5,8 +5,8 @@ map <esc> :noh <CR>
 nnoremap <c-p> :Telescope find_files<cr>
 nnoremap <c-f> :Telescope file_browser<cr>
 
-" nvim tree -- file browser
-nnoremap <c-t> :NvimTreeToggle<CR>
-
 " horizontal scroll 
 map <c-l> 20zl <cr>
+
+" fern
+nmap <C-t> :Fern . -drawer -toggle<CR>
