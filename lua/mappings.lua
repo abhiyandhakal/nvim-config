@@ -14,3 +14,8 @@ vim.keymap.set('n', '<c-p>', require('telescope.builtin').find_files)
 
 -- CHADTree opens on Ctrl + t
 vim.keymap.set('n', '<c-t>', vim.cmd.CHADopen)
+
+-- Terminal opens a horizontal split window on leader + t
+vim.keymap.set('n', '<leader>t', function()
+	vim.api.nvim_command('15new|terminal')
+end)
