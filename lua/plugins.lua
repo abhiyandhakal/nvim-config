@@ -43,4 +43,6 @@ return require('packer').startup(function(use)
 		'neoclide/coc.nvim', branch = 'release',
 		{ run = 'yarn install --frozen-lockfile' }
 	}
+
+	use 'github/copilot.vim'
 end)
