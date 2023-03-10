@@ -39,10 +39,16 @@ return require('packer').startup(function(use)
 		{ run = 'python3 -m chadtree deps' }
 	}
 
+	-- lsp
 	use {
 		'neoclide/coc.nvim', branch = 'release',
 		{ run = 'yarn install --frozen-lockfile' }
 	}
 
+	-- github copilot
 	use 'github/copilot.vim'
+
+	-- beautiful status bar
+	use 'vim-airline/vim-airline'
+	use 'vim-airline/vim-airline-themes'
 end)

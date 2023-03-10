@@ -1,7 +1,5 @@
 {
 	"coc.preferences.formatOnSave": true,
-	"python.linting.enabled": true,
-	"python.linting.pylintEnabled": true,
 	"snippets.ultisnips.directories": ["UltiSnips"],
 	"snippets.userSnippetsDirectory": "~/.config/nvim/snips",
 	"snippets.ultisnips.pythonPrompt": false,
