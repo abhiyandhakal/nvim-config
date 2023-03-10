@@ -48,7 +48,7 @@ return require('packer').startup(function(use)
 	-- github copilot
 	use 'github/copilot.vim'
 
-	-- beautiful status bar
+	-- beautiful status bar with airline
 	use 'vim-airline/vim-airline'
 	use 'vim-airline/vim-airline-themes'
 end)

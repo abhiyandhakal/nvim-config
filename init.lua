@@ -6,7 +6,4 @@ require('settings')
 require('mappings')
 
 -- load the plugins config
-require('plugins.colors')
-require('plugins.treesitter')
-require('plugins.coc')
-require('plugins.emmet')
+require('plugins-config')
