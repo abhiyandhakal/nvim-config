@@ -37,15 +37,17 @@ vim.o.ignorecase = true
 vim.o.splitbelow = true
 vim.o.splitright = true
 
--- ==================== NETRW ====================
+-- format on save
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+
 -- disable netrw header/banner
 vim.g.netrw_banner = 0
 
 -- netrw listing
 vim.g.netrw_liststyle = 3
 
--- automatic formatting
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+-- -- automatic formatting
+-- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
 
 -- turn word wrap off
 vim.o.wrap = false

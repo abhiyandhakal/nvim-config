@@ -69,6 +69,11 @@ return require('packer').startup(function(use)
 		}
 	}
 
+	-- formatting
+	use 'jose-elias-alvarez/null-ls.nvim'
+	use 'MunifTanjim/prettier.nvim'
+
+
 	-- beautiful status bar with airline
 	use 'vim-airline/vim-airline'
 	use 'vim-airline/vim-airline-themes'

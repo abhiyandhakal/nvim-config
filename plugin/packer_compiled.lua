@@ -149,6 +149,11 @@ _G.packer_plugins = {
     path = "/home/abhiyan/.local/share/nvim/site/pack/packer/start/neovim",
     url = "https://github.com/rose-pine/neovim"
   },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/home/abhiyan/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
+  },
   nvim = {
     loaded = true,
     path = "/home/abhiyan/.local/share/nvim/site/pack/packer/start/nvim",
@@ -183,6 +188,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/abhiyan/.local/share/nvim/site/pack/packer/start/presence.nvim",
     url = "https://github.com/andweeb/presence.nvim"
+  },
+  ["prettier.nvim"] = {
+    loaded = true,
+    path = "/home/abhiyan/.local/share/nvim/site/pack/packer/start/prettier.nvim",
+    url = "https://github.com/MunifTanjim/prettier.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
