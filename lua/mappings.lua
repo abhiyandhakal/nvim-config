@@ -25,3 +25,9 @@ end)
 vim.keymap.set('n', '<leader>t', function()
 	vim.api.nvim_command('15new|terminal')
 end)
+
+-- navigation among windows
+vim.keymap.set('n', '<leader>h', '<C-w>h') -- navigate left
+vim.keymap.set('n', '<leader>l', '<C-w>l') -- navigate right
+vim.keymap.set('n', '<leader>j', '<C-w>j') -- navigate below
+vim.keymap.set('n', '<leader>k', '<C-w>k') -- navigate above
