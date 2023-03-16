@@ -1,8 +1,0 @@
-{
-	"coc.preferences.formatOnSave": true,
-	"snippets.ultisnips.directories": ["UltiSnips"],
-	"snippets.userSnippetsDirectory": "~/.config/nvim/snips",
-	"snippets.ultisnips.pythonPrompt": false,
-	"prettier.tabWidth": 2,
-	"prettier.useTabs": true
-}
