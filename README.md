@@ -12,9 +12,6 @@ git clone https://github.com/abhiyandhakal/nvim-config ~/.config/nvim
 
 This configuration uses Packer as a plugin manager. So, first install packer, then type `:PackerInstall` after opening neovim.
 
-Then locate `coc.nvim` directory which is generally inside `~/.local/share/nvim/site/pack/packer/start/`. Then install the dependencies using yarn.
+<hr>
 
-```setup coc.nvim
-cd ~/.local/share/nvim/site/pack/packer/start/coc.nvim
-yarn
-```
+Neovim's builtin lsp has to be manually configured for now.
