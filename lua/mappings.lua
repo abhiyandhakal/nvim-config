@@ -26,6 +26,11 @@ vim.keymap.set('n', '<leader>t', function()
 	vim.api.nvim_command('15new|terminal')
 end)
 
+-- prettier
+vim.keymap.set('n', '<leader>ff', function()
+	vim.api.nvim_command('Prettier')
+end)
+
 -- navigation among windows
 vim.keymap.set('n', '<leader>h', '<C-w>h') -- navigate left
 vim.keymap.set('n', '<leader>l', '<C-w>l') -- navigate right
