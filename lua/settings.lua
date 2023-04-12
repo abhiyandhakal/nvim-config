@@ -38,7 +38,7 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 
 -- format on save
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
 -- disable netrw header/banner
 vim.g.netrw_banner = 0
