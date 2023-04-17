@@ -6,7 +6,12 @@ return require('packer').startup(function(use)
 	use 'mattn/emmet-vim'
 
 	-- comment using gcc and gc
-	use 'tpope/vim-commentary'
+	use {
+		'numToStr/Comment.nvim',
+		config = function()
+			require('Comment').setup()
+		end
+	}
 
 	-- css colors highlighting
 	use 'ap/vim-css-color'
