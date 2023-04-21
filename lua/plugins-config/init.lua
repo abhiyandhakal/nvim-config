@@ -1,5 +1,4 @@
 require('plugins-config/lsp')
-require('plugins-config/emmet')
 require('plugins-config/treesitter')
 require('plugins-config/colors')
 require('plugins-config/airline')

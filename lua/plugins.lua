@@ -2,9 +2,6 @@ return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
 
-	-- emmets, especially for html
-	use 'mattn/emmet-vim'
-
 	-- comment using gcc and gc
 	use {
 		'numToStr/Comment.nvim',
