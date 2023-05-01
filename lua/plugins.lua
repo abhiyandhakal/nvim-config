@@ -79,4 +79,7 @@ return require('packer').startup(function(use)
 	-- beautiful status bar with airline
 	use 'vim-airline/vim-airline'
 	use 'vim-airline/vim-airline-themes'
+
+	-- terminal
+	use 'vimlab/split-term.vim'
 end)

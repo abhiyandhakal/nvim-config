@@ -195,6 +195,11 @@ _G.packer_plugins = {
     path = "/home/abhiyan/.local/share/nvim/site/pack/packer/start/prettier.nvim",
     url = "https://github.com/MunifTanjim/prettier.nvim"
   },
+  ["split-term.vim"] = {
+    loaded = true,
+    path = "/home/abhiyan/.local/share/nvim/site/pack/packer/start/split-term.vim",
+    url = "https://github.com/vimlab/split-term.vim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/abhiyan/.local/share/nvim/site/pack/packer/start/telescope.nvim",

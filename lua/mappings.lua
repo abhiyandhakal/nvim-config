@@ -23,7 +23,7 @@ end)
 
 -- Terminal opens a horizontal split window on leader + t
 vim.keymap.set('n', '<leader>t', function()
-	vim.api.nvim_command('15new|terminal')
+	vim.api.nvim_command('20Term')
 end)
 
 -- prettier
