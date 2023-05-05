@@ -46,11 +46,11 @@ vim.g.netrw_banner = 0
 -- netrw listing
 vim.g.netrw_liststyle = 3
 
--- -- automatic formatting
--- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
-
 -- turn word wrap off
 vim.o.wrap = false
+
+-- access clipboard
+vim.api.nvim_set_option('clipboard', 'unnamedplus')
 
 -- turn off automatic comments on new lines
 vim.api.nvim_create_autocmd({ 'FileType' }, {
