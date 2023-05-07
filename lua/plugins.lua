@@ -1,3 +1,16 @@
+local ensure_packer = function()
+	local fn = vim.fn
+	local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+	if fn.empty(fn.glob(install_path)) > 0 then
+		fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+		vim.cmd [[packadd packer.nvim]]
+		return true
+	end
+	return false
+end
+
+local packer_bootstrap = ensure_packer()
+
 return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
@@ -71,6 +84,16 @@ return require('packer').startup(function(use)
 		}
 	}
 
+	-- for diagnostics
+	use {
+		"folke/trouble.nvim",
+		requires = "nvim-tree/nvim-web-devicons",
+		config = function()
+			require("trouble").setup {
+			}
+		end
+	}
+
 	-- formatting
 	use 'jose-elias-alvarez/null-ls.nvim'
 	use 'MunifTanjim/prettier.nvim'
@@ -87,8 +110,19 @@ return require('packer').startup(function(use)
 	use {
 		"startup-nvim/startup.nvim",
 		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-		config = function()
-			require "startup".setup()
-		end
 	}
+
+	-- brackets surrounding and all
+	use({
+		"kylechui/nvim-surround",
+		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+		config = function()
+			require("nvim-surround").setup({})
+		end
+	})
+
+	-- automatically syncs on startup
+	if packer_bootstrap then
+		require('packer').sync()
+	end
 end)
