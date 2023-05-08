@@ -23,7 +23,7 @@ end)
 
 -- CHADTree opens on Ctrl + b
 vim.keymap.set('n', '<c-b>', function()
-	vim.api.nvim_command(':CHADopen')
+	vim.api.nvim_command(':NeoTreeShowToggle')
 end)
 
 -- Terminal opens a horizontal split window on leader + t
