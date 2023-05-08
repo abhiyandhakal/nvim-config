@@ -1,5 +1,3 @@
--- disable netrw welcome message
-
 -- load all the config files
 require('plugins')
 require('settings')

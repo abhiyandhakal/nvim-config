@@ -16,9 +16,14 @@ end)
 -- telescope mappings
 vim.keymap.set('n', '<c-p>', require('telescope.builtin').find_files)
 
--- CHADTree opens on Ctrl + t
+-- NeoTree opens on Ctrl + t
 vim.keymap.set('n', '<c-t>', function()
-	vim.api.nvim_command('CHADopen')
+	vim.api.nvim_command(':NeoTreeFloatToggle')
+end)
+
+-- CHADTree opens on Ctrl + b
+vim.keymap.set('n', '<c-b>', function()
+	vim.api.nvim_command(':CHADopen')
 end)
 
 -- Terminal opens a horizontal split window on leader + t

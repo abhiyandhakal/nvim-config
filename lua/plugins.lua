@@ -48,10 +48,20 @@ return require('packer').startup(function(use)
 		{ run = ':TSUpdate' }
 	)
 
+	-- file browsers
 	-- file browser
 	use {
 		'ms-jpq/chadtree', branch = 'chad',
 		{ run = 'python3 -m chadtree deps' }
+	}
+	use {
+		"nvim-neo-tree/neo-tree.nvim",
+		branch = "v2.x",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+			"MunifTanjim/nui.nvim",
+		}
 	}
 
 	-- bracket pairing
