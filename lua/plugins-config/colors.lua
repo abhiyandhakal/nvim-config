@@ -1,13 +1,9 @@
--- Set the colorscheme
-vim.cmd('colorscheme catppuccin-mocha')
-
 require("catppuccin").setup {
-	color_overrides = {
-		all = {
-			base = "#111121",
-		},
-	}
+	transparent_background = true,
 }
 
-vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- set vertical split border color
+vim.cmd('highlight VertSplit guibg=#555686')
+
+-- Set the colorscheme
+vim.cmd('colorscheme catppuccin')
