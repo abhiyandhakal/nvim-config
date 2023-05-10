@@ -59,3 +59,6 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
 		vim.opt.formatoptions:remove({ 'o' })
 	end
 })
+
+-- vertical split character
+vim.cmd('set fillchars+=vert:‖')
