@@ -104,6 +104,10 @@ return require('packer').startup(function(use)
 			}
 		end
 	}
+	use {
+		'chikko80/error-lens.nvim',
+		requires = { 'nvim-telescope/telescope.nvim' }
+	}
 
 	-- formatting
 	use 'jose-elias-alvarez/null-ls.nvim'
