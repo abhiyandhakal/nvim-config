@@ -43,6 +43,14 @@ vim.keymap.set('n', '"+y', 'Y')
 -- cut
 vim.keymap.set('n', '"+d', 'Y')
 
+-- buffer navigation
+vim.keymap.set('n', '<Tab>', function()
+	vim.api.nvim_command('bNext')
+end)
+vim.keymap.set('n', '<S-Tab>', function()
+	vim.api.nvim_command('bprevious')
+end)
+
 -- navigation among windows
 vim.keymap.set('n', '<leader>h', '<C-w>h') -- navigate left
 vim.keymap.set('n', '<leader>l', '<C-w>l') -- navigate right
