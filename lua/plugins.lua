@@ -63,7 +63,7 @@ return require('packer').startup(function(use)
 	}
 
 	-- bracket pairing
-	use 'jiangmiao/auto-pairs'
+	use 'LunarWatcher/auto-pairs'
 
 	-- discord presence
 	use 'andweeb/presence.nvim'
