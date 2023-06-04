@@ -5,9 +5,15 @@ local lsp = require('lsp-zero').preset({
 	suggest_lsp_servers = false,
 })
 
--- (Optional) Configure lua language server for neovim
 lsp.nvim_workspace()
 
-lsp.setup()
+lsp.ensure_installed({
+	'tsserver',
+	'rust_analyzer',
+	'eslint',
+	'dockerls',
+	'lua_ls',
+	'bashls'
+})
 
-require 'lspconfig'.grammarly.setup {}
+lsp.setup()

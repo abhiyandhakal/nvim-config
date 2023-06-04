@@ -14,10 +14,10 @@ vim.keymap.set('n', '<leader>e', function()
 end)
 
 -- telescope mappings
-vim.keymap.set('n', '<c-p>', require('telescope.builtin').find_files)
+vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files)
 
--- NeoTree opens on Ctrl + t
-vim.keymap.set('n', '<c-t>', function()
+-- NeoTree opens on leader + t
+vim.keymap.set('n', '<leader>t', function()
 	vim.api.nvim_command(':NeoTreeFloatToggle')
 end)
 
@@ -26,13 +26,13 @@ vim.keymap.set('n', '<c-b>', function()
 	vim.api.nvim_command(':NeoTreeShowToggle')
 end)
 
--- Terminal opens a horizontal split window on leader + t
-vim.keymap.set('n', '<leader>t', function()
+-- Terminal opens a horizontal split window on Ctrl + j
+vim.keymap.set('n', '<c-j>', function()
 	vim.api.nvim_command('20Term')
 end)
 
 -- prettier
-vim.keymap.set('n', '<leader>ff', function()
+vim.keymap.set('n', '<leader>fm', function()
 	vim.api.nvim_command('Prettier')
 end)
 
@@ -42,14 +42,6 @@ vim.keymap.set('v', '"+y', 'Y')
 vim.keymap.set('n', '"+y', 'Y')
 -- cut
 vim.keymap.set('n', '"+d', 'Y')
-
--- buffer navigation
-vim.keymap.set('n', '<Tab>', function()
-	vim.api.nvim_command('bNext')
-end)
-vim.keymap.set('n', '<S-Tab>', function()
-	vim.api.nvim_command('bprevious')
-end)
 
 -- navigation among windows
 vim.keymap.set('n', '<leader>h', '<C-w>h') -- navigate left

@@ -27,7 +27,7 @@ return require('packer').startup(function(use)
 	use 'ap/vim-css-color'
 
 	-- colorscheme
-	use 'rose-pine/neovim'
+	-- use 'rose-pine/neovim'
 	use 'catppuccin/nvim'
 
 	-- icons
@@ -135,6 +135,17 @@ return require('packer').startup(function(use)
 			require("nvim-surround").setup({})
 		end
 	})
+
+	-- harpoon for alternate files
+	use 'ThePrimeagen/harpoon'
+
+	-- oil.nvim
+	use {
+		'stevearc/oil.nvim',
+		config = function() require('oil').setup() end
+	}
+
+	use '/home/abhiyan/coding/nvim-plugins/float.nvim'
 
 	-- automatically syncs on startup
 	if packer_bootstrap then
