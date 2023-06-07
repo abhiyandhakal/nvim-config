@@ -62,3 +62,12 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
 
 -- vertical split character
 vim.cmd('set fillchars+=vert:‖')
+
+-- set color column
+vim.o.colorcolumn = '100'
+
+-- set swapfile off
+vim.o.swapfile = false
+
+-- suggestions height
+vim.o.pumheight = 15

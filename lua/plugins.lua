@@ -2,7 +2,8 @@ local ensure_packer = function()
 	local fn = vim.fn
 	local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 	if fn.empty(fn.glob(install_path)) > 0 then
-		fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
+		fn.system({ 'git', 'clone', '--depth', '1',
+			'https://github.com/wbthomason/packer.nvim', install_path })
 		vim.cmd [[packadd packer.nvim]]
 		return true
 	end
@@ -57,7 +58,7 @@ return require('packer').startup(function(use)
 		branch = 'v2.x',
 		requires = {
 			'nvim-lua/plenary.nvim',
-			'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+			'nvim-tree/nvim-web-devicons',
 			'MunifTanjim/nui.nvim',
 		}
 	}
@@ -72,28 +73,19 @@ return require('packer').startup(function(use)
 	use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 
 	-- lsp
-	use {
-		'VonHeikemen/lsp-zero.nvim',
-		branch = 'v1.x',
-		requires = {
-			-- LSP Support
-			{ 'neovim/nvim-lspconfig' },
-			{ 'williamboman/mason.nvim' },
-			{ 'williamboman/mason-lspconfig.nvim' },
-
-			-- Autocompletion
-			{ 'hrsh7th/nvim-cmp' },
-			{ 'hrsh7th/cmp-nvim-lsp' },
-			{ 'hrsh7th/cmp-buffer' },
-			{ 'hrsh7th/cmp-path' },
-			{ 'hrsh7th/cmp-nvim-lua' },
-			{ 'saadparwaiz1/cmp_luasnip' },
-
-			-- Snippets
-			{ 'L3MON4D3/LuaSnip' },
-			{ 'rafamadriz/friendly-snippets' },
-		}
+	use "williamboman/mason.nvim"
+	use "williamboman/mason-lspconfig.nvim"
+	use "neovim/nvim-lspconfig"
+	use 'hrsh7th/cmp-nvim-lsp'
+	use 'hrsh7th/cmp-buffer'
+	use 'hrsh7th/cmp-path'
+	use 'hrsh7th/cmp-cmdline'
+	use 'hrsh7th/nvim-cmp'
+	use 'hrsh7th/cmp-nvim-lua'
+	use { 'L3MON4D3/LuaSnip',
+		dependencies = { "rafamadriz/friendly-snippets" }
 	}
+	use 'saadparwaiz1/cmp_luasnip'
 
 	-- for diagnostics
 	use {
@@ -103,10 +95,6 @@ return require('packer').startup(function(use)
 			require("trouble").setup {
 			}
 		end
-	}
-	use {
-		'chikko80/error-lens.nvim',
-		requires = { 'nvim-telescope/telescope.nvim' }
 	}
 
 	-- formatting
@@ -144,8 +132,6 @@ return require('packer').startup(function(use)
 		'stevearc/oil.nvim',
 		config = function() require('oil').setup() end
 	}
-
-	use '/home/abhiyan/coding/nvim-plugins/float.nvim'
 
 	-- automatically syncs on startup
 	if packer_bootstrap then
