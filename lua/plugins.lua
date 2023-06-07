@@ -87,6 +87,9 @@ return require('packer').startup(function(use)
 	}
 	use 'saadparwaiz1/cmp_luasnip'
 
+	-- rust related
+	use 'simrat39/rust-tools.nvim'
+
 	-- for diagnostics
 	use {
 		"folke/trouble.nvim",

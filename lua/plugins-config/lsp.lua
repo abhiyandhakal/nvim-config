@@ -129,3 +129,10 @@ require("mason-lspconfig").setup_handlers {
 		}
 	}),
 }
+
+local rt = require("rust-tools")
+
+rt.setup({
+	-- server = {
+	-- },
+})

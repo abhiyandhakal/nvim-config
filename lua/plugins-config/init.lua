@@ -1,6 +1,6 @@
 require('plugins-config.luasnip')
 require('plugins-config.lsp')
-require('plugins-config.treesitter')
+-- require('plugins-config.treesitter')
 require('plugins-config.fold')
 require('plugins-config.colors')
 require('plugins-config.discord')
