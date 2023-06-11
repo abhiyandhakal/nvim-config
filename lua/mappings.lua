@@ -36,12 +36,12 @@ vim.keymap.set('n', '<leader>fm', function()
 	vim.api.nvim_command('Prettier')
 end)
 
--- clipboard
--- copy
-vim.keymap.set('v', '"+y', 'Y')
-vim.keymap.set('n', '"+y', 'Y')
--- cut
-vim.keymap.set('n', '"+d', 'Y')
+-- -- clipboard
+-- -- copy
+-- vim.keymap.set('v', '"+y', 'Y')
+-- vim.keymap.set('n', '"+y', 'Y')
+-- -- cut
+-- vim.keymap.set('n', '"+d', 'Y')
 
 -- navigation among windows
 vim.keymap.set('n', '<leader>h', '<C-w>h') -- navigate left

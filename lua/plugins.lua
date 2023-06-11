@@ -87,6 +87,9 @@ return require('packer').startup(function(use)
 	}
 	use 'saadparwaiz1/cmp_luasnip'
 
+	-- debugging tools
+	use 'mfussenegger/nvim-dap'
+
 	-- rust related
 	use 'simrat39/rust-tools.nvim'
 
@@ -105,9 +108,8 @@ return require('packer').startup(function(use)
 	use 'MunifTanjim/prettier.nvim'
 
 
-	-- beautiful status bar with airline
-	use 'vim-airline/vim-airline'
-	use 'vim-airline/vim-airline-themes'
+	-- beautiful status bar with lualine
+	use 'nvim-lualine/lualine.nvim'
 
 	-- terminal
 	use 'vimlab/split-term.vim'

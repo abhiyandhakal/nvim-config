@@ -50,7 +50,8 @@ vim.g.netrw_liststyle = 3
 vim.o.wrap = false
 
 -- access clipboard
-vim.api.nvim_set_option('clipboard', 'unnamedplus')
+-- vim.api.nvim_set_option('clipboard', 'unnamedplus')
+vim.cmd [[ set clipboard+=unnamedplus ]]
 
 -- turn off automatic comments on new lines
 vim.api.nvim_create_autocmd({ 'FileType' }, {
