@@ -70,7 +70,7 @@ return require('packer').startup(function(use)
 	use 'andweeb/presence.nvim'
 
 	-- code folding
-	use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
+	use 'anuvyklack/pretty-fold.nvim'
 
 	-- lsp
 	use "williamboman/mason.nvim"
@@ -82,9 +82,9 @@ return require('packer').startup(function(use)
 	use 'hrsh7th/cmp-cmdline'
 	use 'hrsh7th/nvim-cmp'
 	use 'hrsh7th/cmp-nvim-lua'
-	use { 'L3MON4D3/LuaSnip',
-		dependencies = { "rafamadriz/friendly-snippets" }
-	}
+	use 'L3MON4D3/LuaSnip'
+	use "rafamadriz/friendly-snippets"
+
 	use 'saadparwaiz1/cmp_luasnip'
 
 	-- debugging tools
