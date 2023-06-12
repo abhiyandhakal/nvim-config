@@ -105,8 +105,6 @@ return require('packer').startup(function(use)
 
 	-- formatting
 	use 'jose-elias-alvarez/null-ls.nvim'
-	use 'MunifTanjim/prettier.nvim'
-
 
 	-- beautiful status bar with lualine
 	use 'nvim-lualine/lualine.nvim'
