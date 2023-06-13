@@ -13,13 +13,13 @@ vim.o.softtabstop = 0
 vim.o.shiftwidth = 0
 
 --mouse is allowed
-vim.o.mouse = 'a'
+vim.o.mouse = "a"
 
 -- incremental search, use n to go to the next match
 vim.o.incsearch = true
 
 -- padding on left for errors and git
-vim.o.signcolumn = 'yes'
+vim.o.signcolumn = "yes"
 
 -- disable error sounds
 vim.o.errorbells = false
@@ -38,7 +38,7 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 
 -- format on save
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
 
 -- disable netrw header/banner
 vim.g.netrw_banner = 0
@@ -49,23 +49,19 @@ vim.g.netrw_liststyle = 3
 -- turn word wrap off
 vim.o.wrap = false
 
--- access clipboard
--- vim.api.nvim_set_option('clipboard', 'unnamedplus')
-vim.cmd [[ set clipboard+=unnamedplus ]]
-
 -- turn off automatic comments on new lines
-vim.api.nvim_create_autocmd({ 'FileType' }, {
-	pattern = '*',
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	pattern = "*",
 	callback = function()
-		vim.opt.formatoptions:remove({ 'o' })
-	end
+		vim.opt.formatoptions:remove({ "o" })
+	end,
 })
 
 -- vertical split character
-vim.cmd('set fillchars+=vert:‖')
+vim.cmd("set fillchars+=vert:‖")
 
 -- set color column
-vim.o.colorcolumn = '100'
+vim.o.colorcolumn = "100"
 
 -- set swapfile off
 vim.o.swapfile = false
