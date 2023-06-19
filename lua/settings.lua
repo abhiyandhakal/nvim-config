@@ -57,9 +57,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
--- vertical split character
-vim.cmd("set fillchars+=vert:‖")
-
 -- set color column
 vim.o.colorcolumn = "100"
 
