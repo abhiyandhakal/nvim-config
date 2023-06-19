@@ -15,6 +15,7 @@ end)
 
 -- telescope mappings
 vim.keymap.set("n", "<leader>ff", require("telescope.builtin").find_files)
+vim.keymap.set("n", "<leader>gf", require("telescope.builtin").git_files)
 
 -- NeoTree opens on leader + t
 vim.keymap.set("n", "<leader>t", function()
