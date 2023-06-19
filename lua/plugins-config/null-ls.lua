@@ -8,5 +8,8 @@ null_ls.setup({
 		-- javascript / typescript
 		null_ls.builtins.diagnostics.eslint_d,
 		null_ls.builtins.formatting.prettierd,
+
+		-- python
+		null_ls.builtins.formatting.autopep8,
 	},
 })
