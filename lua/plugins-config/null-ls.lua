@@ -6,7 +6,7 @@ null_ls.setup({
 		null_ls.builtins.formatting.stylua,
 
 		-- javascript / typescript
-		null_ls.builtins.diagnostics.eslint_d,
+		null_ls.builtins.diagnostics.eslint,
 		null_ls.builtins.formatting.prettierd,
 
 		-- python
