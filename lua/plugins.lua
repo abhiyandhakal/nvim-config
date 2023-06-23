@@ -134,6 +134,9 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	-- emmets, especially for html
+	use("mattn/emmet-vim")
+
 	-- copilot
 	use("zbirenbaum/copilot.lua")
 

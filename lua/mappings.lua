@@ -50,3 +50,9 @@ vim.keymap.set("n", "<leader>h", "<C-w>h") -- navigate left
 vim.keymap.set("n", "<leader>l", "<C-w>l") -- navigate right
 vim.keymap.set("n", "<leader>j", "<C-w>j") -- navigate below
 vim.keymap.set("n", "<leader>k", "<C-w>k") -- navigate above
+
+-- emmet shortcuts (for html)
+vim.cmd([[
+	let g:user_emmet_mode='n' " means normal mode only
+	let g:user_emmet_leader_key=','
+]])
