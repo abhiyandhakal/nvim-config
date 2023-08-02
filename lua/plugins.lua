@@ -118,5 +118,11 @@ require("lazy").setup({
       "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
     }
-  }
+  },
+
+  -- harpoon
+  { 'ThePrimeagen/harpoon' },
+
+  -- copilot
+  { 'github/copilot.vim' }
 }, {})
