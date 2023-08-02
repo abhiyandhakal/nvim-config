@@ -1,163 +1,122 @@
-local ensure_packer = function()
-	local fn = vim.fn
-	local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-	if fn.empty(fn.glob(install_path)) > 0 then
-		fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
-		vim.cmd([[packadd packer.nvim]])
-		return true
-	end
-	return false
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-local packer_bootstrap = ensure_packer()
+require("lazy").setup({
+  -- keymaps helper
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
+    opts = {}
+  },
 
-return require("packer").startup(function(use)
-	-- Packer can manage itself
-	use("wbthomason/packer.nvim")
+  -- Highlight, edit, and navigate code
+  {
+    'nvim-treesitter/nvim-treesitter',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter-textobjects',
+    },
+    build = ':TSUpdate',
+  },
 
-	-- comment using gcc and gc
-	use({
-		"numToStr/Comment.nvim",
-		config = function()
-			require("Comment").setup({
-				pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
-			})
-		end,
-	})
+  -- vscode like lines on tab
+  {
+    -- Add indentation guides even on blank lines
+    'lukas-reineke/indent-blankline.nvim',
+    -- Enable `lukas-reineke/indent-blankline.nvim`
+    -- See `:help indent_blankline.txt`
+    opts = {
+      show_trailing_blankline_indent = false,
+    },
+  },
 
-	-- css colors highlighting
-	use("ap/vim-css-color")
+  -- comment
+  { 'numToStr/Comment.nvim', opts = {} },
 
-	-- colorscheme
-	-- use 'rose-pine/neovim'
-	use("catppuccin/nvim")
+  -- lualine
+  {
+    -- Set lualine as statusline
+    'nvim-lualine/lualine.nvim',
+    -- See `:help lualine.txt`
 
-	-- icons
-	use("ryanoasis/vim-devicons")
+  },
 
-	-- indent lines
-	use("lukas-reineke/indent-blankline.nvim")
+  -- telescope
+  {
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.2',
+    dependencies = { 'nvim-lua/plenary.nvim' }
+  },
 
-	-- telescope
-	use({
-		"nvim-telescope/telescope.nvim",
-		branch = "0.1.x",
-		requires = { { "nvim-lua/plenary.nvim" } },
-	})
+  -- color
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme 'catppuccin-mocha'
+    end
+  },
 
-	-- git integration
-	use("tpope/vim-fugitive")
 
-	-- treesitter
-	use({
-		"nvim-treesitter/nvim-treesitter",
-		run = ":TSUpdate",
-	})
+  {
+    -- LSP Configuration & Plugins
+    'neovim/nvim-lspconfig',
+    dependencies = {
+      -- Automatically install LSPs to stdpath for neovim
+      { 'williamboman/mason.nvim', config = true },
+      'williamboman/mason-lspconfig.nvim',
 
-	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
+      -- Useful status updates for LSP
+      { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
 
-	-- file browser
-	use({
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v2.x",
-		requires = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons",
-			"MunifTanjim/nui.nvim",
-		},
-	})
+      -- Additional lua configuration, makes nvim stuff amazing!
+      'folke/neodev.nvim',
+    },
+  },
 
-	-- bracket pairing
-	use("LunarWatcher/auto-pairs")
+  {
+    -- Autocompletion
+    'hrsh7th/nvim-cmp',
+    dependencies = {
+      -- Snippet Engine & its associated nvim-cmp source
+      'L3MON4D3/LuaSnip',
+      'saadparwaiz1/cmp_luasnip',
 
-	-- discord presence
-	use("andweeb/presence.nvim")
+      -- Adds LSP completion capabilities
+      'hrsh7th/cmp-nvim-lsp',
 
-	-- code folding
-	use("anuvyklack/pretty-fold.nvim")
+      -- Adds a number of user-friendly snippets
+      'rafamadriz/friendly-snippets',
+    },
+  },
 
-	-- lsp
-	use("williamboman/mason.nvim")
-	use("williamboman/mason-lspconfig.nvim")
-	use("neovim/nvim-lspconfig")
-	use("hrsh7th/cmp-nvim-lsp")
-	use("hrsh7th/cmp-buffer")
-	use("hrsh7th/cmp-path")
-	use("hrsh7th/cmp-cmdline")
-	use("hrsh7th/nvim-cmp")
-	use("hrsh7th/cmp-nvim-lua")
-	use("L3MON4D3/LuaSnip")
-	use("rafamadriz/friendly-snippets")
+  -- rust related
+  {
+    'simrat39/rust-tools.nvim'
+  },
 
-	use("saadparwaiz1/cmp_luasnip")
-
-	-- debugging tools
-	use("mfussenegger/nvim-dap")
-
-	-- rust related
-	use("simrat39/rust-tools.nvim")
-
-	-- for diagnostics
-	use({
-		"folke/trouble.nvim",
-		requires = "nvim-tree/nvim-web-devicons",
-		config = function()
-			require("trouble").setup({})
-		end,
-	})
-
-	-- live server
-	use({
-		"aurum77/live-server.nvim",
-		run = function()
-			require("live_server.util").install()
-		end,
-		cmd = { "LiveServer", "LiveServerStart", "LiveServerStop" },
-	})
-
-	-- formatting
-	use("jose-elias-alvarez/null-ls.nvim")
-
-	-- beautiful status bar with lualine
-	use("nvim-lualine/lualine.nvim")
-
-	-- terminal
-	use("vimlab/split-term.vim")
-
-	-- startup screen
-	use({
-		"startup-nvim/startup.nvim",
-		requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-	})
-
-	-- brackets surrounding and all
-	use({
-		"kylechui/nvim-surround",
-		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-		config = function()
-			require("nvim-surround").setup({})
-		end,
-	})
-
-	-- harpoon for alternate files
-	use("ThePrimeagen/harpoon")
-
-	-- oil.nvim
-	use({
-		"stevearc/oil.nvim",
-		config = function()
-			require("oil").setup()
-		end,
-	})
-
-	-- emmets, especially for html
-	use("mattn/emmet-vim")
-
-	-- copilot
-	use("zbirenbaum/copilot.lua")
-
-	-- automatically syncs on startup
-	if packer_bootstrap then
-		require("packer").sync()
-	end
-end)
+  {
+    -- tree
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    }
+  }
+}, {})
