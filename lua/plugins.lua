@@ -124,5 +124,5 @@ require("lazy").setup({
   { 'ThePrimeagen/harpoon' },
 
   -- copilot
-  { 'github/copilot.vim' }
+  { "zbirenbaum/copilot.lua" }
 }, {})
