@@ -1,10 +1,10 @@
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
 vim.keymap.set('n', '<leader>/', function()
- require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-   winblend = 10,
-   previewer = false,
- })
+	require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+		winblend = 10,
+		previewer = false,
+	})
 end, { desc = '[/] Fuzzily search in current buffer' })
 
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })

@@ -17,5 +17,5 @@ vim.keymap.set("n", "<leader>k", "<C-w>k") -- navigate above
 
 -- terminal
 vim.keymap.set("n", "<c-j>", function()
-  vim.api.nvim_command("20Term")
+	vim.api.nvim_command("20Term")
 end)
