@@ -11,7 +11,6 @@ vim.o.autoindent = true
 -- related to tabwidth
 vim.o.tabstop = 2
 vim.o.shiftwidth = 0
-vim.o.expandtab = true
 
 -- incremental search, use n to go to the next match
 vim.o.incsearch = true
@@ -35,10 +34,10 @@ vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
 
 -- remove autocomment on new line
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = "*",
-    callback = function()
-        vim.opt.formatoptions:remove("c")
-        vim.opt.formatoptions:remove("r")
-        vim.opt.formatoptions:remove("o")
-    end,
+  pattern = "*",
+  callback = function()
+    vim.opt.formatoptions:remove("c")
+    vim.opt.formatoptions:remove("r")
+    vim.opt.formatoptions:remove("o")
+  end,
 })
