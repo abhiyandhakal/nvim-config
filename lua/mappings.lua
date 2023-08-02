@@ -9,4 +9,13 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 -- :noh on <Esc>
 vim.keymap.set('n', '<Esc>', '<cmd>noh<cr>')
 
--- telescope mappings
+-- navigation among windows
+vim.keymap.set("n", "<leader>h", "<C-w>h") -- navigate left
+vim.keymap.set("n", "<leader>l", "<C-w>l") -- navigate right
+vim.keymap.set("n", "<leader>j", "<C-w>j") -- navigate below
+vim.keymap.set("n", "<leader>k", "<C-w>k") -- navigate above
+
+-- terminal
+vim.keymap.set("n", "<c-j>", function()
+  vim.api.nvim_command("20Term")
+end)
