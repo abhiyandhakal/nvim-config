@@ -101,6 +101,15 @@ require("lazy").setup({
 
       -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
+
+      -- nvim-cmp source for buffer words
+      "hrsh7th/cmp-buffer",
+
+      -- nvim-cmp source for path
+      "hrsh7th/cmp-path",
+
+      -- nvim-cmp source for path
+      "hrsh7th/cmp-cmdline",
     },
   },
 
