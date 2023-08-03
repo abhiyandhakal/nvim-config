@@ -138,6 +138,10 @@ require("lazy").setup({
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 
+	-- git related
+	{ 'tpope/vim-fugitive' },
+	{ 'lewis6991/gitsigns.nvim' },
+
 	-- harpoon
 	{ 'ThePrimeagen/harpoon' },
 
