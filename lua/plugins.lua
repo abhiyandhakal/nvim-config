@@ -113,6 +113,9 @@ require("lazy").setup({
 		},
 	},
 
+	-- for linters and formatters
+	{ 'nvimdev/guard.nvim' },
+
 	-- rust related
 	{
 		'simrat39/rust-tools.nvim'
