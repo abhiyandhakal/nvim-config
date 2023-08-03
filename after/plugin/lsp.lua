@@ -23,6 +23,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 -- nvim cmp
 local cmp = require("cmp")
 local luasnip = require("luasnip")
+require("luasnip.loaders.from_vscode").lazy_load()
 
 local has_words_before = function()
 	unpack = unpack or table.unpack
