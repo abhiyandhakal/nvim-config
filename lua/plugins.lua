@@ -152,4 +152,7 @@ require("lazy").setup({
 		end,
 		cmd = { "LiveServer", "LiveServerStart", "LiveServerStop" },
 	},
+
+	-- emmets, especially for html, jsx, etc
+	{ 'mattn/emmet-vim' },
 }, {})
