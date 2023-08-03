@@ -19,3 +19,7 @@ vim.keymap.set("n", "<leader>k", "<C-w>k") -- navigate above
 vim.keymap.set("n", "<c-j>", function()
 	vim.api.nvim_command("20Term")
 end)
+
+-- clipboard
+vim.keymap.set("v", "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>y", [["+y]])
