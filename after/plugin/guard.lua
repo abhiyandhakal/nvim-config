@@ -1,7 +1,7 @@
 local ft = require("guard.filetype")
 
 -- multiple files register
-ft("typescript,javascript,typescriptreact"):fmt("prettier")
+ft("typescript,javascript,typescriptreact,css,scss,grqphql,html,json,less,markdown,yaml"):fmt("prettier")
 
 
 -- call setup LAST
