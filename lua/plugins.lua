@@ -114,6 +114,12 @@ require("lazy").setup({
 		},
 	},
 
+	{
+		-- for diagnostics
+		"folke/trouble.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
+
 	-- for linters and formatters
 	{ 'nvimdev/guard.nvim' },
 
