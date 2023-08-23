@@ -121,7 +121,7 @@ require("lazy").setup({
 	},
 
 	-- for linters and formatters
-	{ 'nvimdev/guard.nvim' },
+	{ 'jose-elias-alvarez/null-ls.nvim' },
 
 	-- rust related
 	{
