@@ -20,22 +20,22 @@ require("lazy").setup({
 			vim.o.timeout = true
 			vim.o.timeoutlen = 300
 		end,
-		opts = {}
+		opts = {},
 	},
 
 	-- Highlight, edit, and navigate code
 	{
-		'nvim-treesitter/nvim-treesitter',
+		"nvim-treesitter/nvim-treesitter",
 		dependencies = {
-			'nvim-treesitter/nvim-treesitter-textobjects',
+			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
-		build = ':TSUpdate',
+		build = ":TSUpdate",
 	},
 
 	-- vscode like lines on tab
 	{
 		-- Add indentation guides even on blank lines
-		'lukas-reineke/indent-blankline.nvim',
+		"lukas-reineke/indent-blankline.nvim",
 		-- Enable `lukas-reineke/indent-blankline.nvim`
 		-- See `:help indent_blankline.txt`
 		opts = {
@@ -44,22 +44,21 @@ require("lazy").setup({
 	},
 
 	-- comment
-	{ 'numToStr/Comment.nvim',                      opts = {} },
+	{ "numToStr/Comment.nvim", opts = {} },
 	{ "JoosepAlviste/nvim-ts-context-commentstring" },
 
 	-- lualine
 	{
 		-- Set lualine as statusline
-		'nvim-lualine/lualine.nvim',
+		"nvim-lualine/lualine.nvim",
 		-- See `:help lualine.txt`
-
 	},
 
 	-- telescope
 	{
-		'nvim-telescope/telescope.nvim',
-		tag = '0.1.2',
-		dependencies = { 'nvim-lua/plenary.nvim' }
+		"nvim-telescope/telescope.nvim",
+		tag = "0.1.2",
+		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 
 	-- color
@@ -68,40 +67,39 @@ require("lazy").setup({
 		name = "catppuccin",
 		priority = 1000,
 		config = function()
-			vim.cmd.colorscheme 'catppuccin-mocha'
-		end
+			vim.cmd.colorscheme("catppuccin-mocha")
+		end,
 	},
-
 
 	{
 		-- LSP Configuration & Plugins
-		'neovim/nvim-lspconfig',
+		"neovim/nvim-lspconfig",
 		dependencies = {
 			-- Automatically install LSPs to stdpath for neovim
-			{ 'williamboman/mason.nvim', config = true },
-			'williamboman/mason-lspconfig.nvim',
+			{ "williamboman/mason.nvim", config = true },
+			"williamboman/mason-lspconfig.nvim",
 
 			-- Useful status updates for LSP
-			{ 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
+			{ "j-hui/fidget.nvim", tag = "legacy", opts = {} },
 
 			-- Additional lua configuration, makes nvim stuff amazing!
-			'folke/neodev.nvim',
+			"folke/neodev.nvim",
 		},
 	},
 
 	{
 		-- Autocompletion
-		'hrsh7th/nvim-cmp',
+		"hrsh7th/nvim-cmp",
 		dependencies = {
 			-- Snippet Engine & its associated nvim-cmp source
-			'L3MON4D3/LuaSnip',
-			'saadparwaiz1/cmp_luasnip',
+			"L3MON4D3/LuaSnip",
+			"saadparwaiz1/cmp_luasnip",
 
 			-- Adds LSP completion capabilities
-			'hrsh7th/cmp-nvim-lsp',
+			"hrsh7th/cmp-nvim-lsp",
 
 			-- Adds a number of user-friendly snippets
-			'rafamadriz/friendly-snippets',
+			"rafamadriz/friendly-snippets",
 
 			-- nvim-cmp source for buffer words
 			"hrsh7th/cmp-buffer",
@@ -121,11 +119,11 @@ require("lazy").setup({
 	},
 
 	-- for linters and formatters
-	{ 'jose-elias-alvarez/null-ls.nvim' },
+	{ "jose-elias-alvarez/null-ls.nvim" },
 
 	-- rust related
 	{
-		'simrat39/rust-tools.nvim'
+		"simrat39/rust-tools.nvim",
 	},
 
 	-- file browsers
@@ -136,21 +134,21 @@ require("lazy").setup({
 			"nvim-lua/plenary.nvim",
 			"nvim-tree/nvim-web-devicons",
 			"MunifTanjim/nui.nvim",
-		}
+		},
 	},
 	{
-		'stevearc/oil.nvim',
+		"stevearc/oil.nvim",
 		opts = {},
 		-- Optional dependencies
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 
 	-- git related
-	{ 'tpope/vim-fugitive' },
-	{ 'lewis6991/gitsigns.nvim' },
+	{ "tpope/vim-fugitive" },
+	{ "lewis6991/gitsigns.nvim" },
 
 	-- harpoon
-	{ 'ThePrimeagen/harpoon' },
+	{ "ThePrimeagen/harpoon" },
 
 	-- copilot
 	{ "zbirenbaum/copilot.lua" },
@@ -165,5 +163,11 @@ require("lazy").setup({
 	},
 
 	-- emmets, especially for html, jsx, etc
-	{ 'mattn/emmet-vim' },
+	{ "mattn/emmet-vim" },
+
+	{
+		-- autopairs
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+	},
 }, {})
