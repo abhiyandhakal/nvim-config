@@ -165,9 +165,6 @@ require("lazy").setup({
 	-- emmets, especially for html, jsx, etc
 	{ "mattn/emmet-vim" },
 
-	{
-		-- autopairs
-		"windwp/nvim-autopairs",
-		event = "InsertEnter",
-	},
+	-- autopairs
+	{ "cohama/lexima.vim" },
 }, {})
