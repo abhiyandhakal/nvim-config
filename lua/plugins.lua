@@ -34,17 +34,13 @@ require("lazy").setup({
 
 	-- vscode like lines on tab
 	{
-		-- Add indentation guides even on blank lines
 		"lukas-reineke/indent-blankline.nvim",
-		-- Enable `lukas-reineke/indent-blankline.nvim`
-		-- See `:help indent_blankline.txt`
-		opts = {
-			show_trailing_blankline_indent = false,
-		},
+		main = "ibl",
+		opts = {}
 	},
 
 	-- comment
-	{ "numToStr/Comment.nvim", opts = {} },
+	{ "numToStr/Comment.nvim",                      opts = {} },
 	{ "JoosepAlviste/nvim-ts-context-commentstring" },
 
 	-- lualine
@@ -80,7 +76,7 @@ require("lazy").setup({
 			"williamboman/mason-lspconfig.nvim",
 
 			-- Useful status updates for LSP
-			{ "j-hui/fidget.nvim", tag = "legacy", opts = {} },
+			{ "j-hui/fidget.nvim",       tag = "legacy", opts = {} },
 
 			-- Additional lua configuration, makes nvim stuff amazing!
 			"folke/neodev.nvim",
