@@ -41,3 +41,5 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt.formatoptions:remove("o")
 	end,
 })
+
+vim.o.colorcolumn = "80"
