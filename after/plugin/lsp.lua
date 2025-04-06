@@ -130,6 +130,19 @@ require("mason-lspconfig").setup_handlers({
 	}),
 })
 
+require("lspconfig").rust_analyzer.setup({
+	settings = {
+		["rust-analyzer"] = {
+			checkOnSave = {
+				command = "clippy", -- or "check"
+			},
+			diagnostics = {
+				enable = true,
+			},
+		},
+	},
+})
+
 local rt = require("rust-tools")
 
 rt.setup({})
