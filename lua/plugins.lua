@@ -115,7 +115,12 @@ require("lazy").setup({
 	},
 
 	-- for linters and formatters
-	{ "jose-elias-alvarez/null-ls.nvim" },
+	{
+		"nvimtools/none-ls.nvim",
+		dependencies = {
+			"nvimtools/none-ls-extras.nvim",
+		},
+	},
 
 	-- rust related
 	{
