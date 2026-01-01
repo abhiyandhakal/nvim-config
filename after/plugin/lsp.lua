@@ -97,7 +97,7 @@ require("mason-lspconfig").setup({
 	ensure_installed = {
 		"lua_ls",
 		"rust_analyzer",
-		"tsserver",
+		"ts_ls",
 		"jsonls",
 		"clangd",
 		"html",
@@ -108,33 +108,28 @@ require("mason-lspconfig").setup({
 	},
 })
 
-local lspconfig = require("lspconfig")
 local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-require("mason-lspconfig").setup_handlers({
-	function(server_name)
-		lspconfig[server_name].setup({
-			capabilities = lsp_capabilities,
-		})
-	end,
-
-	lspconfig.lua_ls.setup({
-		settings = {
-			diagnostics = {
-				globals = {
-					"vim",
-					"require",
-				},
-			},
-		},
-	}),
+-- Configure LSP servers using vim.lsp.config (nvim 0.11+)
+vim.lsp.config("*", {
+	capabilities = lsp_capabilities,
 })
 
-require("lspconfig").rust_analyzer.setup({
+vim.lsp.config("lua_ls", {
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { "vim", "require" },
+			},
+		},
+	},
+})
+
+vim.lsp.config("rust_analyzer", {
 	settings = {
 		["rust-analyzer"] = {
 			checkOnSave = {
-				command = "clippy", -- or "check"
+				command = "clippy",
 			},
 			diagnostics = {
 				enable = true,
@@ -143,6 +138,16 @@ require("lspconfig").rust_analyzer.setup({
 	},
 })
 
-local rt = require("rust-tools")
-
-rt.setup({})
+-- Enable all installed servers
+vim.lsp.enable({
+	"lua_ls",
+	"rust_analyzer",
+	"ts_ls",
+	"jsonls",
+	"clangd",
+	"html",
+	"pyright",
+	"cssls",
+	"cssmodules_ls",
+	"svelte",
+})
